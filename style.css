@@ -1,0 +1,404 @@
+/*
+Theme Name: izazov-2 theme
+Author: Bulatovic Ivan
+Description: prebacivanje html-a u WP sajt
+Version: 1.0
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+:root {
+    --primary: #37287b;
+    --secondary: #4942a2;
+    --accents: #fba60b;
+    --black: #121212;
+    --white: #fff;
+    --text: #878787;
+    --gray: #1f242a;
+    --shadow: #d8d8d8;
+    --lightGray: #e3e3ef;
+    --fontFamily: 'Open Sans', sans-serif;
+    --fontSize: 16px;
+    --transition: .4s ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    color: var(--text);
+    letter-spacing: 1.7;
+    line-height: 1.5;
+}
+.button, .dugme{
+    border: none;
+    padding: 10px 30px;
+    border-radius: 40px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+.dugme{
+    background: var(--primary);
+    margin-left: 30px;
+    transition: var(--transition);
+    display: inline-block;
+}
+.dugme:hover{
+    background: var(--accents);
+    color: var(--white);
+}
+.button{
+    background-color: var(--accents);
+}
+.button:hover{
+    color: var(--white);
+}
+.active a {
+    transition: var(--transition);
+    color: var(--accents);
+}
+a{
+    transition: var(--transition);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* nav */
+.navbar{
+    background-color: rgba(55, 40, 123, .8);
+    z-index: 10;
+}
+
+.navbar-brand{
+    color: var(--white);
+    font-weight: 800;
+    font-size: 3rem;
+    min-height: 8vh;
+    transition: var(--transition);
+}
+.navbar-brand:hover{
+    color: var(--accents);
+}
+.nav-item a{
+    color: var(--white);
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+.nav-item a:hover{
+    color: var(--accents);
+}
+
+/* header */
+.mainHeader{
+    background: url(img/home-header.png);
+    background-position: bottom;
+    background-size: cover;
+    height: 115vh;
+}
+.mainHeader img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.mainHeader .row{
+   padding: 150px 0 60px 0;
+}
+.mainHeader h1{
+    font-weight: 600;
+    font-size: 3rem;
+}
+/* main */
+.main h2{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.main .card{
+    border: none;
+    border-radius: 30px;
+    padding: 100px 40px;
+    height: 100%;
+    transition: var(--transition);
+}
+.main .card h5{
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+.main .card i{
+    font-size: 2.5rem;
+    margin: 0 30px 50px 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    transition: var(--transition);
+}
+.main .card .col-md-4{
+    padding-right: 60px;
+    border: none;
+}
+hr{
+    border: none;
+    width: 100%;
+    height: 2px;
+    background: lightgray; 
+}
+
+.main .card:hover{
+    color: var(--white);
+    background: var(--secondary);
+}
+.main .card:hover i{
+    color: var(--black);
+    background: white;
+    box-shadow: 0 0 20px var(--black);
+}
+
+/* kalendar */
+.kalendar h2{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.kalendar .col-md-4 .featured-image {
+    overflow: hidden;
+    border-radius: 30px;
+}
+.kalendar .col-md-4{
+    cursor: pointer;
+}
+.kalendar .col-md-4 .featured-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 1s ease-in;
+}
+.kalendar .col-md-4 .featured-image img:hover{
+    transform: scale(1.1);
+}
+
+.kalendar .meta{
+    top: -10px;
+    right: 30px;
+    background: var(--lightGray);
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+
+.kalendar h2::after,
+.main h2::after{
+    content: "";
+    display: block;
+    height: 5px;
+    width: 140px;
+    margin: 30px auto 30px auto;
+    background-image: linear-gradient(to right,
+      #37287b 0 70px,
+      transparent 70px 80px,
+      #37287b 80px 120px,
+      transparent 120px 130px,
+      #37287b 130px 140px);
+      border-radius: 10px;
+}
+
+footer{
+    background: var(--gray);
+}
+footer i{
+    color: var(--lightGray);
+    font-size: 2rem;
+}
+footer h4{
+    font-size: 2rem;
+}
+footer img{
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+}
+footer ul:last-child li a{
+    text-transform: lowercase;
+    padding: 0;
+}
+footer ul:last-child li a::first-letter{
+    text-transform: uppercase;
+}
+footer ul:last-child li{
+    margin: 0;
+}
+
+ /* snimci */
+
+ .snimci{
+     background: var(--primary);
+     position: relative;
+     height: 30vh;
+ }
+ .snimci .card{
+     border-radius: 20px;
+     border: 1px solid  var(--accents);
+     position: absolute;
+     top: -58px;
+ }
+.snimci .glavniNaslov{
+    background: var(--accents);
+    border-radius: 20px 20px 0 0;
+    padding: 15px;
+    text-align: center;
+}
+.snimci .col-md-7{
+    padding-top: 80px;
+}
+
+/* radionice */
+
+.headers{
+    background: url(img/headers.png);
+    background-position: bottom;
+    background-size: cover;
+    height: 50vh;
+}
+.headers h3{
+    font-size: 2rem;
+    padding-top: 150px;
+}
+
+/* radionice */
+
+
+.radionice .col-md-6 .featured-image {
+    overflow: hidden;
+    border-radius: 30px;
+}
+.radionice .col-md-6{
+    cursor: pointer;
+}
+.radionice .col-md-6 .featured-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 1s ease-in;
+}
+.radionice .col-md-6 .featured-image img:hover{
+    transform: scale(1.1);
+}
+
+.radionice .meta{
+    top: -10px;
+    right: 30px;
+    background: var(--lightGray);
+    border-radius: 30px;
+    font-weight: 600;
+}
+.radionice h3{
+    position: absolute;
+    bottom: -30px;
+    left: 30px;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: rgba(0,0,0,.6);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* blog */
+
+
+.blog .col-md-6 .featured-image {
+    overflow: hidden;
+    border-radius: 30px;
+}
+.blog .col-md-6{
+    cursor: pointer;
+}
+.blog .col-md-6 .featured-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 1s ease-in;
+}
+.blog .col-md-6 .featured-image img:hover{
+    transform: scale(1.1);
+}
+
+.blog .meta{
+    top: -10px;
+    right: 30px;
+    background: var(--lightGray);
+    border-radius: 30px;
+    font-weight: 600;
+}
+.blog h3{
+    position: absolute;
+    bottom: 7px;
+    left: 50px;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: rgba(0,0,0,.6);
+    border-radius: 20px;
+    padding: 10px;
+}
+/* o nama */
+.o-nama img{
+    width: 100%;
+    object-fit: cover;
+}
+
+/* radionicaLista */
+
+.radionicaLista .widget1,
+.radionicaLista .widget2
+{
+    background-color: var(--primary);
+    font-size: 1rem;
+    color: var(--accents);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.radionicaLista .widget1 a,
+.radionicaLista .widget2 a
+{
+    color: var(--accents);
+}
+.radionicaLista a::first-letter{
+   text-transform: uppercase;
+}
+.radionicaLista .widget2 a{
+    text-transform: lowercase;
+}
+.radionicaLista .widget1 p,
+.radionicaLista .widget2 li a{
+    margin: 0;
+    padding: 0;
+}
+
+.radionicaLista img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 30px !important;
+}
+.radionicaLista .meta{
+    top: -10px;
+    right: 30px;
+    background: var(--lightGray);
+    border-radius: 30px;
+    font-weight: 600;
+}
+.radionicaLista .widget1 h4,
+.radionicaLista .widget2 h4{
+    color: var(--white);
+}
